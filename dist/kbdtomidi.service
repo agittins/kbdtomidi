@@ -1,0 +1,22 @@
+; systemd service file to run the keyboard-to-midi daemon
+;
+; kbdtomidi takes exclusive control of an input device and generates midi
+; events from the button presses instead of keyboard events.
+; 
+; NOTE: you may need to replace the /dev/input path below so that it matches the
+;   actual device that you want kbdtomidi to take over. If that path matches your
+;   actual main keyboard you will have an interesting day.
+;
+[Unit]
+Description=Keyboard to MIDI Service
+
+[Service]
+Type=simple
+Restart=always
+;EnvironmentFile=-/etc/sysconfig/rsyslog
+ExecStart=/usr/local/share/gigrig/kbdtomidi/kbdtomidi /dev/input/by-id/usb-_USB_Keyboard-event-kbd virtual
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
+;Alias=syslog.service
