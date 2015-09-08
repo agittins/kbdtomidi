@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
   }
   fprintf(stdout, "ver: %d, ret = %d\n", version, ioret);
   printf("device name is: %s\n", device_name);
-  printf("EVIOCGRAB is: %d\n", EVIOCGRAB);
+  printf("EVIOCGRAB is: %lu\n", EVIOCGRAB);
 
 
   if (device_out) {

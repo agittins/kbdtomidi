@@ -24,6 +24,7 @@ If you use something like sooperlooper, lupp, guitarix etc this makes things a l
 There are no pre-built packages so you'll need to build it on your system. 
  - Download or clone the repository
  - you'll need a c compiler (gcc) and also the development libraries for ALSA (probably alsa-devel or similar). Each distro has its own names for these packages. Let me know what you learn so I can update this with something more user-friendly :-)
+  - debian: you need (at least) git, gcc, libasound2-dev
  - sh$ make
  - If your system uses systemd (seems to be the forerunner for world domnination currently) then:
   - plug in your usb keyboard, and explore /dev/input to find out what its device name is. ** it is important you do this - you do not want this daemon to hijack the keyboard you are using to type! **

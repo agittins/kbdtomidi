@@ -1,5 +1,5 @@
 all:
-	/usr/bin/gcc -lasound kbdtomidi.c -o kbdtomidi
+	/usr/bin/gcc kbdtomidi.c `pkg-config --cflags --libs alsa` -o kbdtomidi
 
 reload: all
 	killall -9 kbdtomidi
